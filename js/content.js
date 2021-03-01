@@ -82,6 +82,15 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults) 
                 spanNode.className = HIGHLIGHT_CLASS;
                 spanNode.style.backgroundColor = highlightColor;
                 spanNode.style.color = textColor;
+                spanNode.style.position = 'relative';
+                spanNode.style.display = 'inline-block';
+                var span = createSpan();
+                spanNode.onmouseover = function() {
+                    spanNode.appendChild(span);
+                };
+                span.onclick = function() {
+                    spanNode.removeChild(span);
+                };
                 spanNode.appendChild(matchedTextNode.cloneNode(true));
                 matchedTextNode.parentNode.replaceChild(spanNode, matchedTextNode);
                 searchInfo.highlightedNodes.push(spanNode);
@@ -99,6 +108,24 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults) 
     }
     highlightRecursive(document.getElementsByTagName('body')[0]);
 };
+
+function createSpan() {
+    var span = document.createElement('SPAN');
+    span.style.position = 'absolute';
+    span.style.visibility = 'visible';
+    span.style.width = '160px';
+    span.style.backgroundColor = '#555';
+    span.style.color = '#fff';
+    span.style.textAlign = 'center';
+    span.style.borderRadius = '6px';
+    span.style.padding = '8px 0';
+    span.style.zIndex = '1';
+    span.style.bottom = '125%';
+    span.style.left = '50%';
+    span.style.marginLeft = '-80px';
+    span.textContent = 'hello world!';
+    return span;
+}
 
 /* Remove all highlights from page */
 function removeHighlight() {
