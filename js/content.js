@@ -63,7 +63,7 @@ function isExpandable(node) {
 
 
 /* Highlight all text that matches regex */
-function highlight(regex, highlightColor, selectedColor, textColor, maxResults) {
+function highlight(regex, highlightColor, selectedColor, textColor, maxResults, web_link) {
     function callback() {
         console.log("Yishay");
     }
@@ -84,7 +84,7 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults) 
                 spanNode.style.color = textColor;
                 spanNode.style.position = 'relative';
                 spanNode.style.display = 'inline-block';
-                var span = createSpan();
+                var span = createSpan(web_link);
                 spanNode.onmouseover = function() {
                     spanNode.appendChild(span);
                 };
@@ -109,7 +109,7 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults) 
     highlightRecursive(document.getElementsByTagName('body')[0]);
 };
 
-function createSpan() {
+function createSpan(web_link) {
     var span = document.createElement('SPAN');
     span.style.position = 'absolute';
     span.style.visibility = 'visible';
@@ -123,7 +123,13 @@ function createSpan() {
     span.style.bottom = '125%';
     span.style.left = '50%';
     span.style.marginLeft = '-80px';
-    span.textContent = 'hello world!';
+    var little_info = document.getElementsByClassName('LawBillTitleDiv');
+    span.textContent = 'מתוך אתר הכנסת:' + '\n\n' + little_info.textContent;
+    var a = document.createElement('a');
+    var link = document.createTextNode("לחצי לקישור");
+    a.appendChild(link);
+    a.href = web_link;
+    span.appendChild(a);
     return span;
 }
 
@@ -212,7 +218,7 @@ function validateRegex(pattern) {
 }
 
 /* Find and highlight regex matches in web page from a given regex string or pattern */
-function search(regexString, configurationChanged) {
+function search(regexString, web_link, configurationChanged) {
     var regex = validateRegex(regexString);
     if (regex && regexString != '' && (configurationChanged || regexString !== searchInfo.regexString)) { // new valid regex string
         removeHighlight();
@@ -228,7 +234,7 @@ function search(regexString, configurationChanged) {
                 if (result.caseInsensitive) {
                     regex = new RegExp(regexString, 'i');
                 }
-                highlight(regex, result.highlightColor, result.selectedColor, result.textColor, result.maxResults);
+                highlight(regex, result.highlightColor, result.selectedColor, result.textColor, result.maxResults, web_link);
                 selectFirstNode(result.selectedColor);
                 returnSearchInfo('search');
             }
@@ -264,13 +270,9 @@ let all_laws = { "\u05d7\u05d5\u05e7 \u05e9\u05db\u05e8": { "\u05d7\u05d5\u05e7 
 for (var two_words in all_laws) {
     var keys = all_laws[two_words];
     for (var key in keys) {
-        var web_site = keys[key];
-        search(key, true);
+        web_link = keys[key];
+        search(key, web_link, true);
     }
-    // if (web_site) {
-    //get link to web-site
-
-    // }
 }
 
 
