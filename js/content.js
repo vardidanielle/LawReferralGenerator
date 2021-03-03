@@ -64,9 +64,6 @@ function isExpandable(node) {
 
 /* Highlight all text that matches regex */
 function highlight(regex, highlightColor, selectedColor, textColor, maxResults, web_link) {
-    function callback() {
-        console.log("Yishay");
-    }
 
     function highlightRecursive(node) {
         if (searchInfo.length >= maxResults) {
@@ -85,12 +82,13 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults, 
                 spanNode.style.position = 'relative';
                 spanNode.style.display = 'inline-block';
                 var span = createSpan(web_link);
-                spanNode.onmouseover = function() {
+                spanNode.onmouseenter = function() {
                     spanNode.appendChild(span);
                 };
-                span.onclick = function() {
+                spanNode.onmouseleave = function(){
                     spanNode.removeChild(span);
                 };
+
                 spanNode.appendChild(matchedTextNode.cloneNode(true));
                 matchedTextNode.parentNode.replaceChild(spanNode, matchedTextNode);
                 searchInfo.highlightedNodes.push(spanNode);
@@ -111,24 +109,15 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults, 
 
 function createSpan(web_link) {
     var span = document.createElement('SPAN');
-    span.style.position = 'absolute';
-    span.style.visibility = 'visible';
-    span.style.width = '160px';
-    span.style.backgroundColor = '#555';
-    span.style.color = '#fff';
-    span.style.textAlign = 'center';
-    span.style.borderRadius = '6px';
-    span.style.padding = '8px 0';
-    span.style.zIndex = '1';
-    span.style.bottom = '125%';
-    span.style.left = '50%';
-    span.style.marginLeft = '-80px';
+    span.classList.add('low-ref-tooltip')
     var little_info = document.getElementsByClassName('LawBillTitleDiv');
     span.textContent = 'מתוך אתר הכנסת:' + '\n\n' + little_info.textContent;
     var a = document.createElement('a');
-    var link = document.createTextNode("לחצי לקישור");
+    a.style.textDecoration = 'none'
+    var link = document.createTextNode(" לחצי לקישור ");
     a.appendChild(link);
     a.href = web_link;
+    a.target = '_blank';
     span.appendChild(a);
     return span;
 }

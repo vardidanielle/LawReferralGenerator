@@ -1,0 +1,30 @@
+.low-ref-tooltip{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.877);
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    text-overflow: ellipsis;
+    white-space: pre;
+    line-height: 0.8em;
+    box-sizing: border-box;
+    color: rgb(206, 206, 206);
+    display: inline-block;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: .75rem;
+    hyphens: auto;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 1020;
+    opacity: 1;
+    visibility: visible;
+    bottom:90%;
+    left: 5%;
+}
+
+.low-ref-tooltip a:visited,.low-ref-tooltip a {
+    text-decoration: none;
+    font-size: .75rem;
+    color: #fff;
+    font-weight: bold;
+
+}
