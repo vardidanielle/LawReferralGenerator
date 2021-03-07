@@ -10,6 +10,7 @@ var DEFAULT_HIGHLIGHT_COLOR = '#ffff00';
 var DEFAULT_SELECTED_COLOR = '#ff9900';
 var DEFAULT_TEXT_COLOR = '#000000';
 var DEFAULT_CASE_INSENSITIVE = false;
+var spanNodeList = {};
 /*** CONSTANTS ***/
 
 /*** VARIABLES ***/
@@ -28,6 +29,11 @@ Element.prototype.visible = function() {
 
 
 /*** FUNCTIONS ***/
+
+function getSpanNodeList() {
+    return spanNodeList;
+}
+
 /* Initialize search information for this tab */
 function initSearchInfo(pattern) {
     var pattern = typeof pattern !== 'undefined' ? pattern : '';
@@ -81,11 +87,13 @@ function highlight(regex, highlightColor, selectedColor, textColor, maxResults, 
                 spanNode.style.color = textColor;
                 spanNode.style.position = 'relative';
                 spanNode.style.display = 'inline-block';
+                spanNodeList[matchedText] = spanNode;
                 var span = createSpan(web_link);
+
                 spanNode.onmouseenter = function() {
                     spanNode.appendChild(span);
                 };
-                spanNode.onmouseleave = function(){
+                spanNode.onmouseleave = function() {
                     spanNode.removeChild(span);
                 };
 
@@ -264,5 +272,5 @@ for (var two_words in all_laws) {
     }
 }
 
-
+module.exports = { spanNodeList };
 /*** INIT ***/
