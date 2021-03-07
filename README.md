@@ -14,13 +14,13 @@ This project is part of an academic course on Digital Humanities at [Ben Gurion 
 * [Download the extension fiels](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
 )
 
-* Extract the zip file
+* Extract the zip file.
 
-* In your Chrome browser, navigate to chrome://extensions
+* In your Chrome browser, navigate to chrome://extensions.
 
 * Expand the Developer drop down and click “Load unpacked extension.”
 
-* Navigate to the directory where you put your code and click Ok
+* Navigate to the directory where you put your code and click Ok.
 
 At this point, the extension is installed and running. 
 
