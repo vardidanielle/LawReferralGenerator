@@ -6,11 +6,17 @@ The current version is based on Regex search and works with Hebrew text only.
 When the extension finds a low in your website it will generate a link to the low details in   [The Israeli National Legislative Database](https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawHome.aspx).
 
 
+## Background:
+Many website users meet references to laws or sections of law and cannot simply refer to the requested law or the section within it.
 
+### The Mission:
+Development of a tool or plugin for a browser that knows how to run an HTML file, identify and capture names of rules and sections that appear on the page, translate them into a URI, and use them to display the current version of the section as it appears in the full XML database.
+
+An example of such a tool can be seen in Safria's referral network for Jewish religious literature. In this project, we want to convert to this task in the field of legislation.
 
 ## Installation
 
-* [Download the extension files.](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
+* [Download the extension fiels](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
 )
 
 * Extract the zip file.
