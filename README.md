@@ -5,7 +5,7 @@ The current version is based on Regex search and works with Hebrew text only.
 
 When the extension finds a low in your website it will generate a link to the low details in   [The Israeli National Legislative Database](https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawHome.aspx).
 
-This project is part of an academic course on Digital Humanities at [Ben Gurion University](https://in.bgu.ac.il/en/pages/default.aspx).  
+This project is part of an academic course on Digital Humanities at [Ben Gurion University](https://in.bgu.ac.il/en/pages/default.aspx) and collaborative work with [The Israeli Ministry Of Justice](https://www.gov.il/he/departments/ministry_of_justice).
 
 
 
