@@ -10,7 +10,7 @@ When the extension finds a low in your website it will generate a link to the lo
 
 ## Installation
 
-* [Download the extension fiels](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
+* [Download the extension files](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
 )
 
 * Extract the zip file.
