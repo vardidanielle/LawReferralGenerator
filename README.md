@@ -17,7 +17,7 @@ An example of such a tool can be seen in Safria's referral network for Jewish Re
 ## Installation
 
 * [Download the extension fiels](https://github.com/vardidanielle/LawReferralGenerator/archive/yishay.zip
-)
+).
 
 * Extract the zip file.
 
