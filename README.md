@@ -12,7 +12,7 @@ Many website users meet references to laws or sections of law and cannot simply 
 ### The Mission:
 Development of a tool or plugin for a browser that knows how to run an HTML file, identify and capture names of rules and sections that appear on the page, translate them into a URI, and use them to display the current version of the section as it appears in the full XML database.
 
-An example of such a tool can be seen in Safria's referral network for Jewish religious literature. In this project, we want to convert to this task in the field of legislation.
+An example of such a tool can be seen in Safria's referral network for Jewish Religious Literature. In this project, we want to convert to this task in the field of legislation.
 
 ## Installation
 
