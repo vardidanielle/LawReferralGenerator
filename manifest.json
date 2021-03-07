@@ -20,12 +20,12 @@
             "64": "icons/icons_64.png",
             "128": "icons/icons_128.png",
             "256": "icons/icons_256.png"
-        },
-        "default_popup": "popup.html"
+        }
     },
     "permissions": [
         "activeTab",
-        "storage"
+        "storage",
+        "tabs"
     ],
     "background": {
         "scripts": ["js/background.js"],
@@ -33,12 +33,15 @@
     },
     "content_scripts": [{
             "matches": ["http://*/*", "https://*/*", "file://*/*"],
-            "js": ["js/content.js"]
+            "js": ["js/content.js" ]
         },
         {
             "matches": ["http://*/*", "https://*/*", "file://*/*"],
             "css": ["main.css"]
         }
-    ]
+    ] ,    "web_accessible_resources": [
+        "js/popup.js",
+        "js/content.js"
+     ]
 
 }

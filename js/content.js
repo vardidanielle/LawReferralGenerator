@@ -1,3 +1,6 @@
+var global = this;
+var spanNodeList = {};
+
 /*** CONSTANTS ***/
 var ELEMENT_NODE_TYPE = 1;
 var TEXT_NODE_TYPE = 3;
@@ -10,7 +13,6 @@ var DEFAULT_HIGHLIGHT_COLOR = '#ffff00';
 var DEFAULT_SELECTED_COLOR = '#ff9900';
 var DEFAULT_TEXT_COLOR = '#000000';
 var DEFAULT_CASE_INSENSITIVE = false;
-var spanNodeList = {};
 /*** CONSTANTS ***/
 
 /*** VARIABLES ***/
@@ -119,10 +121,10 @@ function createSpan(web_link) {
     var span = document.createElement('SPAN');
     span.classList.add('low-ref-tooltip')
     var little_info = document.getElementsByClassName('LawBillTitleDiv');
-    span.textContent = 'מתוך אתר הכנסת:' + '\n\n' + little_info.textContent;
+    span.textContent = ' למעבר לעמוד החוק במאגר החקיקה הלאומי:' + '\n\n';
     var a = document.createElement('a');
     a.style.textDecoration = 'none'
-    var link = document.createTextNode(" לחצי לקישור ");
+    var link = document.createTextNode(" לחצי ");
     a.appendChild(link);
     a.href = web_link;
     a.target = '_blank';
@@ -254,8 +256,24 @@ function search(regexString, web_link, configurationChanged) {
 /*** FUNCTIONS ***/
 
 
-
 /*** LISTENERS ***/
+// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+//     var spanNodeList = {};
+//     if ('loadY' == request.message) {
+//         var ol = document.createElement("ol");
+//         var dict = global.spanNodeList;
+//         for (var key in dict) {
+//             var law = document.createElement('li');
+//             law.textContent = key;
+//             law.onclick = function() {
+//                 dict[key].scrollIntoView();
+//             }
+//             ol.appendChild(law);
+//         }
+//         document.body.appendChild(ol);
+//         }
+// });
+
 
 /*** LISTENERS ***/
 
@@ -272,5 +290,6 @@ for (var two_words in all_laws) {
     }
 }
 
-module.exports = { spanNodeList };
+// export { spanNodeList };
+
 /*** INIT ***/
