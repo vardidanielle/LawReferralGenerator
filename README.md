@@ -1,9 +1,9 @@
 # Law Referral Generator
-This repo is a chrome extension to find and highlight Israeli lows on any website.
+This repo is a chrome extension to find and highlight Israeli laws on any website.
 
 The current version is based on Regex search and works with Hebrew text only. 
 
-When the extension finds a low in your website it will generate a link to the low details in   [The Israeli National Legislative Database](https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawHome.aspx).
+When the extension finds a law in your website it will generate a link to the law details in   [The Israeli National Legislative Database](https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawHome.aspx).
 
 
 ## Background
